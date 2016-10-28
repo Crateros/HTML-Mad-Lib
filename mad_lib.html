@@ -16,12 +16,20 @@
             'type an adjective',
             'Type a noun'
         ];
-        // alert(prompts.length);
-        // alert(prompts[0]);
+        // Track current prompt
+        var currentPrompt = 0;
 
-        // Utilizes javascript to extract array value at position 0 and translate to HTML//
-        $('.prompt').html(prompts[2]);
+        // A function that will call the next prompt
+        var nextPrompt = function() {
+            // put the currentPrompt in html elements with class .prompt
+            $('.prompt').html(prompts[currentPrompt]);
+            // move the next prompt into variable currentPrompt
+            currentPrompt = currentPrompt + 1;
+        }
+
+        // run nextPrompt function when button is clicked
+        $('button').click(function() {
+            nextPrompt();
+        });
     </script>
 </body>
-
-for git
